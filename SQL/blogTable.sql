@@ -1,4 +1,4 @@
-﻿DROP TABLE blogs;
+﻿DROP TABLE IF EXISTS dbo.blogs;
 
 CREATE TABLE blogs (
 blogID VARCHAR(20) PRIMARY KEY, 
