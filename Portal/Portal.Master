@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Portal.master.cs" Inherits="Portal.Portal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/MyStyle.css" rel="stylesheet" />
+</head>
+<body id="masterji">
+
+
+    
+      <nav class="navbar navbar-default navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <asp:HyperLink ID="FOTId" class="navbar-brand" NavigateUrl="~/Default.aspx"  runat="server">My Blog</asp:HyperLink>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><asp:HyperLink ID="HomeId" Visible="false" NavigateUrl="~/Welcome.aspx"  runat="server">Home</asp:HyperLink></li>
+          <li class="nav navbar-brand navbar-right"><asp:Label ID="LoggedInNameId" runat="server"></asp:Label></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Account</b> <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><asp:HyperLink ID="MainLoginId" NavigateUrl="~/SignIn.aspx"  runat="server">Sign-In</asp:HyperLink></li>
+             <li><asp:HyperLink ID="MainSignUpId" NavigateUrl="~/SignUp.aspx"  runat="server">Sign-Up</asp:HyperLink></li>
+           
+            <li><asp:HyperLink ID="UpdateProfileId" Visible="false" NavigateUrl="~/UpdateProfilePage.aspx"  runat="server">Update Profile</asp:HyperLink></li>
+            <li><asp:HyperLink ID="AddBlogId" Visible="false" NavigateUrl="~/AddBlog.aspx"  runat="server">Add a Blog</asp:HyperLink></li>
+            
+            <li><asp:HyperLink ID="MainLogoutId" Visible="false" NavigateUrl="~/Logout.aspx"  runat="server">Logout</asp:HyperLink></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <form  id="form1" runat="server">
+
+
+        <div >
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
+  
+      <nav class="navbar navbar-default navbar-fixed-bottom" id="footer-look">
+  <div class="container" >
+    <h5>IT494 © 2016</h5>
+  </div>
+</nav>
+    <%--<script src="js/SignUpJS.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>--%>
+
+    <script type="text/javascript"  src="<%= ResolveUrl("~/js/SignUpJS.js") %>"></script>
+    <script type="text/javascript"  src="<%= ResolveUrl("~/js/jquery-1.11.3.js") %>"></script>
+    <script type="text/javascript"  src="<%= ResolveUrl("~/js/bootstrap.min.js") %>"></script>
+
+
+</body>
+   
+
+</html>
